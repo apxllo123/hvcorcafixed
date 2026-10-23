@@ -43,7 +43,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Remodel
-        run: aftman install remodel
+        run: |
+          # The released Linux binary links OpenSSL 1.1, which the runner image does not provide.
+          rm -f "$HOME/.aftman/bin/remodel"
+          RUSTFLAGS="--cap-lints allow" cargo install --git https://github.com/rojo-rbx/remodel --tag v0.11.0 --locked remodel
 
       - name: Install NPM dependencies
         run: npm ci

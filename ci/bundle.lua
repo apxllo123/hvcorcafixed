@@ -15,7 +15,7 @@ local DEBUG_MODE = getFlag("debug")
 local VERBOSE = getFlag("verbose")
 local MINIFY = getFlag("minify")
 
-local ROJO_INPUT = "Havoc.rbxm"
+local ROJO_INPUT = "hvcorca.rbxm"
 local RUNTIME_FILE = "ci/runtime.lua"
 local BUNDLE_TEMP = "ci/bundle.tmp"
 
